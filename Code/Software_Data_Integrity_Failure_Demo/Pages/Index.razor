@@ -4,16 +4,22 @@
 
 <PageTitle>Index</PageTitle>
 
+@if (currentType != null)
+{
+    <DynamicComponent Type="currentType"></DynamicComponent>
+}
 
 <button @onclick=Update>Update</button>
 
 @code{
+    private Type? currentType;
+
     private async Task Update()
     {
         var result = await Client.GetAsync("https://localhost:7156/api/Dll/load");
 
         var asm = Assembly.Load(await result.Content.ReadAsByteArrayAsync());
 
-        Console.WriteLine(asm.FullName);
+        currentType = asm.GetTypes().FirstOrDefault(x => x.Name.StartsWith("Main"));
     }
 }

@@ -13,7 +13,7 @@ namespace DllServer.Controllers
         [HttpGet("load")]
         public async Task<IActionResult> LoadDll()
         {
-            return File(System.IO.File.ReadAllBytes(@"F:\FH_Technikum_Wien\2_Se\Websecurity\Demo\Software_Integrity_Failure_Demo\Code\OurLibrary\bin\Debug\net6.0\OurLibrary.dll"), "application/octet-stream", "Ourlibrary.dll");
+            return File(System.IO.File.ReadAllBytes(@"F:\FH_Technikum_Wien\2_Se\Websecurity\Demo\Software_Integrity_Failure_Demo\Code\BlazorControls\bin\Debug\net6.0\BlazorControls.dll"), "application/octet-stream", "Ourlibrary.dll");
         }
     }
 }
