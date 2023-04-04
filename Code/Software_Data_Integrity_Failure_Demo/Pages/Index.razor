@@ -1,13 +1,19 @@
 ﻿@page "/"
 @using System.Reflection;
+@inject HttpClient Client
 
 <PageTitle>Index</PageTitle>
 
-<button @onclick="Update">Update</button>
+
+<button @onclick=Update>Update</button>
 
 @code{
     private async Task Update()
     {
-        var asm = Assembly.LoadFrom(@"C:\Users\Grego\source\repos\Software_Data_Integrity_Failure_Demo\OurLibrary\bin\Debug\net6.0\OurLibrary.dll");
+        var result = await Client.GetAsync("https://localhost:7156/api/Dll/load");
+
+        var asm = Assembly.Load(await result.Content.ReadAsByteArrayAsync());
+
+        Console.WriteLine(asm.FullName);
     }
 }

@@ -26,6 +26,11 @@ namespace DllServer
 
             app.UseAuthorization();
 
+            app.UseCors(config =>
+            {
+                config.AllowAnyOrigin();
+                config.AllowAnyMethod();
+            });
 
             app.MapControllers();
 
