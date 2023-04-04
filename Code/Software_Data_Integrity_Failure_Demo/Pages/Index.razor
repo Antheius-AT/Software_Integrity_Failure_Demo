@@ -1,0 +1,13 @@
+﻿@page "/"
+@using System.Reflection;
+
+<PageTitle>Index</PageTitle>
+
+<button @onclick="Update">Update</button>
+
+@code{
+    private async Task Update()
+    {
+        var asm = Assembly.LoadFrom(@"C:\Users\Grego\source\repos\Software_Data_Integrity_Failure_Demo\OurLibrary\bin\Debug\net6.0\OurLibrary.dll");
+    }
+}
