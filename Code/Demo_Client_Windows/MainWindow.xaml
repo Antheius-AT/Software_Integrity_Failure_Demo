@@ -9,7 +9,10 @@
     <DockPanel Background="Cyan">
         <StackPanel VerticalAlignment="Bottom">
             <ContentControl Content="{Binding DynamicContent}"></ContentControl>
-            <Button Command="{Binding LoadDllCommand}" Margin="30" Width="100" Height="50" Background="Tomato" Content="Update DLL"></Button>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <CheckBox Content="Verify integrity" IsChecked="{Binding IsIntegrityVerificationEnabled}"></CheckBox>
+                <Button Command="{Binding LoadDllCommand}" Margin="30" Width="100" Height="50" Background="Tomato" Content="Update DLL"></Button>
+            </StackPanel>
         </StackPanel>
     </DockPanel>
 </Window>
