@@ -1,0 +1,15 @@
+﻿<Window x:Class="Demo_Client_Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo_Client_Windows"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="LightBlue">
+    <DockPanel Background="Cyan">
+        <StackPanel VerticalAlignment="Bottom">
+            <ContentControl Content="{Binding DynamicContent}"></ContentControl>
+            <Button Command="{Binding LoadDllCommand}" Margin="30" Width="100" Height="50" Background="Tomato" Content="Update DLL"></Button>
+        </StackPanel>
+    </DockPanel>
+</Window>
